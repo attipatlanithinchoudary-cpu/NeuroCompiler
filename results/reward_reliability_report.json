@@ -1,0 +1,81 @@
+{
+  "benchmark_weights": {
+    "benchmark://cbench-v1/bzip2": 0.0,
+    "benchmark://cbench-v1/gsm": 0.0,
+    "benchmark://cbench-v1/stringsearch": 0.0,
+    "benchmark://cbench-v1/tiff2rgba": 1.0
+  },
+  "benchmarks": [
+    {
+      "benchmark": "bzip2",
+      "benchmark_uri": "benchmark://cbench-v1/bzip2",
+      "failures": [
+        "rank_corr",
+        "sign_agreement",
+        "mean_abs_improvement"
+      ],
+      "mean_abs_improvement_pct": 0.913084282805524,
+      "median_cv_pct": 2.4799166496205145,
+      "o0_median_sec": 8.1182362785,
+      "protocol": "B",
+      "rank_corr": 0.04761904761904763,
+      "reliable": false,
+      "sign_agreement": 0.375,
+      "suite": "cbench-v1",
+      "weight": 0.0
+    },
+    {
+      "benchmark": "gsm",
+      "benchmark_uri": "benchmark://cbench-v1/gsm",
+      "failures": [
+        "rank_corr",
+        "sign_agreement",
+        "mean_abs_improvement"
+      ],
+      "mean_abs_improvement_pct": 0.5027503971008267,
+      "median_cv_pct": 1.035759849175179,
+      "o0_median_sec": 1.0143094425,
+      "protocol": "B",
+      "rank_corr": -0.11904761904761905,
+      "reliable": false,
+      "sign_agreement": 0.5,
+      "suite": "cbench-v1",
+      "weight": 0.0
+    },
+    {
+      "benchmark": "stringsearch",
+      "benchmark_uri": "benchmark://cbench-v1/stringsearch",
+      "failures": [
+        "rank_corr",
+        "sign_agreement",
+        "median_cv"
+      ],
+      "mean_abs_improvement_pct": 5.480285767997322,
+      "median_cv_pct": 13.48817586728173,
+      "o0_median_sec": 0.33267616,
+      "protocol": "B",
+      "rank_corr": 0.2380952380952381,
+      "reliable": false,
+      "sign_agreement": 0.5,
+      "suite": "cbench-v1",
+      "weight": 0.0
+    },
+    {
+      "benchmark": "tiff2rgba",
+      "benchmark_uri": "benchmark://cbench-v1/tiff2rgba",
+      "failures": [],
+      "mean_abs_improvement_pct": 1.7199209077847304,
+      "median_cv_pct": 2.7952447455801295,
+      "o0_median_sec": 0.882363198,
+      "protocol": "B",
+      "rank_corr": 0.7142857142857144,
+      "reliable": true,
+      "sign_agreement": 0.75,
+      "suite": "cbench-v1",
+      "weight": 1.0
+    }
+  ],
+  "reliable_benchmarks": [
+    "benchmark://cbench-v1/tiff2rgba"
+  ]
+}

@@ -1,0 +1,915 @@
+[
+  {
+    "benchmark_uri": "benchmark://cbench-v1/bitcount",
+    "suite": "cbench-v1",
+    "protocol": "native",
+    "status": "ok",
+    "run_cmd": "./a.out 1125000",
+    "build_cmd": "'$CC' '$IN' -isystem /usr/include/c++/15 -isystem /usr/include/x86_64-linux-gnu/c++/15 -isystem /usr/include/c++/15/backward -isystem /usr/lib/gcc/x86_64-linux-gnu/15/include -isystem /usr/local/include -isystem /usr/include/x86_64-linux-gnu -isystem /usr/include",
+    "codegen": "-O3",
+    "o0_ir_instruction_count": 857,
+    "pass_sequence": [
+      "-licm",
+      "-licm"
+    ],
+    "final_ir": 874,
+    "o3_ir_instruction_count": 607,
+    "hybrid_vs_o3_ir_pct": -43.98682042833608,
+    "inputs": [
+      {
+        "input_file": null,
+        "input_index": null,
+        "input_candidates": 0,
+        "o3": {
+          "n": 3,
+          "median_sec": 0.06615294499999891,
+          "mean_sec": 0.0669458460000006,
+          "std_sec": 0.001602779511926891,
+          "min_sec": 0.06589406199999814,
+          "max_sec": 0.06879053100000476,
+          "ci95_lo_sec": 0.06589406199999814,
+          "ci95_hi_sec": 0.06879053100000476
+        },
+        "clang_o3": {
+          "n": 3,
+          "median_sec": 0.07221345600000006,
+          "mean_sec": 0.07197283399999795,
+          "std_sec": 0.0019089270718227762,
+          "min_sec": 0.06995500399999344,
+          "max_sec": 0.07375004200000035,
+          "ci95_lo_sec": 0.06995500399999344,
+          "ci95_hi_sec": 0.07375004200000035
+        },
+        "hybrid": {
+          "n": 3,
+          "median_sec": 0.06463239500000384,
+          "mean_sec": 0.06471415499999959,
+          "std_sec": 0.0007165977236097076,
+          "min_sec": 0.06404194399999596,
+          "max_sec": 0.06546812599999896,
+          "ci95_lo_sec": 0.06404194399999596,
+          "ci95_hi_sec": 0.06546812599999896
+        },
+        "outputs_match": true,
+        "speedup_hybrid_vs_o3": 1.023526128035252,
+        "speedup_hybrid_vs_clang_o3": 1.117295065423396
+      }
+    ],
+    "o3": {
+      "n": 3,
+      "median_sec": 0.06615294499999891,
+      "mean_sec": 0.0669458460000006,
+      "std_sec": 0.001602779511926891,
+      "min_sec": 0.06589406199999814,
+      "max_sec": 0.06879053100000476,
+      "ci95_lo_sec": 0.06589406199999814,
+      "ci95_hi_sec": 0.06879053100000476
+    },
+    "clang_o3": {
+      "n": 3,
+      "median_sec": 0.07221345600000006,
+      "mean_sec": 0.07197283399999795,
+      "std_sec": 0.0019089270718227762,
+      "min_sec": 0.06995500399999344,
+      "max_sec": 0.07375004200000035,
+      "ci95_lo_sec": 0.06995500399999344,
+      "ci95_hi_sec": 0.07375004200000035
+    },
+    "hybrid": {
+      "n": 3,
+      "median_sec": 0.06463239500000384,
+      "mean_sec": 0.06471415499999959,
+      "std_sec": 0.0007165977236097076,
+      "min_sec": 0.06404194399999596,
+      "max_sec": 0.06546812599999896,
+      "ci95_lo_sec": 0.06404194399999596,
+      "ci95_hi_sec": 0.06546812599999896
+    },
+    "outputs_match": true,
+    "speedup_hybrid_vs_o3": 1.023526128035252,
+    "speedup_hybrid_vs_clang_o3": 1.117295065423396,
+    "elapsed_sec": 6.19
+  },
+  {
+    "benchmark_uri": "benchmark://cbench-v1/bzip2",
+    "suite": "cbench-v1",
+    "protocol": "native",
+    "status": "ok",
+    "run_cmd": "./a.out -d -k -f -c /home/nithi/.local/share/compiler_gym/llvm-v0/cbench-v1-runtime-data/runtime_data/bzip2_data/1.bz2",
+    "build_cmd": "'$CC' '$IN' -isystem /usr/include/c++/15 -isystem /usr/include/x86_64-linux-gnu/c++/15 -isystem /usr/include/c++/15/backward -isystem /usr/lib/gcc/x86_64-linux-gnu/15/include -isystem /usr/local/include -isystem /usr/include/x86_64-linux-gnu -isystem /usr/include",
+    "codegen": "-O3",
+    "o0_ir_instruction_count": 28748,
+    "pass_sequence": [
+      "-indvars",
+      "-indvars"
+    ],
+    "final_ir": 28767,
+    "o3_ir_instruction_count": 19169,
+    "hybrid_vs_o3_ir_pct": -50.07042620898326,
+    "inputs": [
+      {
+        "input_file": "/home/nithi/.local/share/compiler_gym/llvm-v0/cbench-v1-runtime-data/runtime_data/bzip2_data/1.bz2",
+        "input_index": 0,
+        "input_candidates": 32,
+        "o3": {
+          "n": 3,
+          "median_sec": 0.10279950700000029,
+          "mean_sec": 0.10076113866666958,
+          "std_sec": 0.006154034839450416,
+          "min_sec": 0.0938465380000082,
+          "max_sec": 0.10563737100000026,
+          "ci95_lo_sec": 0.0938465380000082,
+          "ci95_hi_sec": 0.10563737100000026
+        },
+        "clang_o3": {
+          "n": 3,
+          "median_sec": 0.09667309200000318,
+          "mean_sec": 0.09814441300000472,
+          "std_sec": 0.004970669378194763,
+          "min_sec": 0.09407549600000209,
+          "max_sec": 0.1036846510000089,
+          "ci95_lo_sec": 0.09407549600000209,
+          "ci95_hi_sec": 0.1036846510000089
+        },
+        "hybrid": {
+          "n": 3,
+          "median_sec": 0.09971249200000898,
+          "mean_sec": 0.09997037966667222,
+          "std_sec": 0.002158672870834401,
+          "min_sec": 0.09795223500000816,
+          "max_sec": 0.10224641199999951,
+          "ci95_lo_sec": 0.09795223500000816,
+          "ci95_hi_sec": 0.10224641199999951
+        },
+        "outputs_match": true,
+        "speedup_hybrid_vs_o3": 1.0309591600618209,
+        "speedup_hybrid_vs_clang_o3": 0.9695183628546208
+      }
+    ],
+    "o3": {
+      "n": 3,
+      "median_sec": 0.10279950700000029,
+      "mean_sec": 0.10076113866666958,
+      "std_sec": 0.006154034839450416,
+      "min_sec": 0.0938465380000082,
+      "max_sec": 0.10563737100000026,
+      "ci95_lo_sec": 0.0938465380000082,
+      "ci95_hi_sec": 0.10563737100000026
+    },
+    "clang_o3": {
+      "n": 3,
+      "median_sec": 0.09667309200000318,
+      "mean_sec": 0.09814441300000472,
+      "std_sec": 0.004970669378194763,
+      "min_sec": 0.09407549600000209,
+      "max_sec": 0.1036846510000089,
+      "ci95_lo_sec": 0.09407549600000209,
+      "ci95_hi_sec": 0.1036846510000089
+    },
+    "hybrid": {
+      "n": 3,
+      "median_sec": 0.09971249200000898,
+      "mean_sec": 0.09997037966667222,
+      "std_sec": 0.002158672870834401,
+      "min_sec": 0.09795223500000816,
+      "max_sec": 0.10224641199999951,
+      "ci95_lo_sec": 0.09795223500000816,
+      "ci95_hi_sec": 0.10224641199999951
+    },
+    "outputs_match": true,
+    "speedup_hybrid_vs_o3": 1.0309591600618209,
+    "speedup_hybrid_vs_clang_o3": 0.9695183628546208,
+    "elapsed_sec": 17.98
+  },
+  {
+    "benchmark_uri": "benchmark://cbench-v1/dijkstra",
+    "suite": "cbench-v1",
+    "protocol": "native",
+    "status": "ok",
+    "run_cmd": "./a.out /home/nithi/.local/share/compiler_gym/llvm-v0/cbench-v1-runtime-data/runtime_data/network_dijkstra_data/1.dat",
+    "build_cmd": "'$CC' '$IN' -isystem /usr/include/c++/15 -isystem /usr/include/x86_64-linux-gnu/c++/15 -isystem /usr/include/c++/15/backward -isystem /usr/lib/gcc/x86_64-linux-gnu/15/include -isystem /usr/local/include -isystem /usr/include/x86_64-linux-gnu -isystem /usr/include",
+    "codegen": "-O3",
+    "o0_ir_instruction_count": 450,
+    "pass_sequence": [
+      "-loop-rotate",
+      "-loop-vectorize"
+    ],
+    "final_ir": 482,
+    "o3_ir_instruction_count": 366,
+    "hybrid_vs_o3_ir_pct": -31.693989071038253,
+    "inputs": [
+      {
+        "input_file": "/home/nithi/.local/share/compiler_gym/llvm-v0/cbench-v1-runtime-data/runtime_data/network_dijkstra_data/1.dat",
+        "input_index": 0,
+        "input_candidates": 20,
+        "o3": {
+          "n": 3,
+          "median_sec": 0.013582202999998572,
+          "mean_sec": 0.013865343000001454,
+          "std_sec": 0.0008707303863931604,
+          "min_sec": 0.013171421999999211,
+          "max_sec": 0.014842404000006582,
+          "ci95_lo_sec": 0.013171421999999211,
+          "ci95_hi_sec": 0.014842404000006582
+        },
+        "clang_o3": {
+          "n": 3,
+          "median_sec": 0.015235472000000527,
+          "mean_sec": 0.01535064933333293,
+          "std_sec": 0.0003124957500293666,
+          "min_sec": 0.015112088999998718,
+          "max_sec": 0.015704386999999542,
+          "ci95_lo_sec": 0.015112088999998718,
+          "ci95_hi_sec": 0.015704386999999542
+        },
+        "hybrid": {
+          "n": 3,
+          "median_sec": 0.013684136000009062,
+          "mean_sec": 0.013348789999994892,
+          "std_sec": 0.0008732586108925835,
+          "min_sec": 0.012357564999987858,
+          "max_sec": 0.014004668999987757,
+          "ci95_lo_sec": 0.012357564999987858,
+          "ci95_hi_sec": 0.014004668999987757
+        },
+        "outputs_match": true,
+        "speedup_hybrid_vs_o3": 0.9925510094308897,
+        "speedup_hybrid_vs_clang_o3": 1.1133674789544943
+      }
+    ],
+    "o3": {
+      "n": 3,
+      "median_sec": 0.013582202999998572,
+      "mean_sec": 0.013865343000001454,
+      "std_sec": 0.0008707303863931604,
+      "min_sec": 0.013171421999999211,
+      "max_sec": 0.014842404000006582,
+      "ci95_lo_sec": 0.013171421999999211,
+      "ci95_hi_sec": 0.014842404000006582
+    },
+    "clang_o3": {
+      "n": 3,
+      "median_sec": 0.015235472000000527,
+      "mean_sec": 0.01535064933333293,
+      "std_sec": 0.0003124957500293666,
+      "min_sec": 0.015112088999998718,
+      "max_sec": 0.015704386999999542,
+      "ci95_lo_sec": 0.015112088999998718,
+      "ci95_hi_sec": 0.015704386999999542
+    },
+    "hybrid": {
+      "n": 3,
+      "median_sec": 0.013684136000009062,
+      "mean_sec": 0.013348789999994892,
+      "std_sec": 0.0008732586108925835,
+      "min_sec": 0.012357564999987858,
+      "max_sec": 0.014004668999987757,
+      "ci95_lo_sec": 0.012357564999987858,
+      "ci95_hi_sec": 0.014004668999987757
+    },
+    "outputs_match": true,
+    "speedup_hybrid_vs_o3": 0.9925510094308897,
+    "speedup_hybrid_vs_clang_o3": 1.1133674789544943,
+    "elapsed_sec": 4.22
+  },
+  {
+    "benchmark_uri": "benchmark://cbench-v1/gsm",
+    "suite": "cbench-v1",
+    "protocol": "native",
+    "status": "ok",
+    "run_cmd": "./a.out -fps -c /home/nithi/.local/share/compiler_gym/llvm-v0/cbench-v1-runtime-data/runtime_data/telecom_gsm_data/1.au",
+    "build_cmd": "'$CC' '$IN' -isystem /usr/include/c++/15 -isystem /usr/include/x86_64-linux-gnu/c++/15 -isystem /usr/include/c++/15/backward -isystem /usr/lib/gcc/x86_64-linux-gnu/15/include -isystem /usr/local/include -isystem /usr/include/x86_64-linux-gnu -isystem /usr/include",
+    "codegen": "-O3",
+    "o0_ir_instruction_count": 14902,
+    "pass_sequence": [
+      "-licm",
+      "-loop-rotate",
+      "-indvars",
+      "-indvars",
+      "-indvars"
+    ],
+    "final_ir": 15388,
+    "o3_ir_instruction_count": 10028,
+    "hybrid_vs_o3_ir_pct": -53.45033905065816,
+    "inputs": [
+      {
+        "input_file": "/home/nithi/.local/share/compiler_gym/llvm-v0/cbench-v1-runtime-data/runtime_data/telecom_gsm_data/1.au",
+        "input_index": 0,
+        "input_candidates": 20,
+        "o3": {
+          "n": 3,
+          "median_sec": 0.020722636000002126,
+          "mean_sec": 0.02115747366666672,
+          "std_sec": 0.000788833307034201,
+          "min_sec": 0.020681750999997917,
+          "max_sec": 0.022068034000000125,
+          "ci95_lo_sec": 0.020681750999997917,
+          "ci95_hi_sec": 0.022068034000000125
+        },
+        "clang_o3": {
+          "n": 3,
+          "median_sec": 0.021156740999998647,
+          "mean_sec": 0.021249519666663257,
+          "std_sec": 0.0006391693457491723,
+          "min_sec": 0.020661809999992897,
+          "max_sec": 0.021930007999998224,
+          "ci95_lo_sec": 0.020661809999992897,
+          "ci95_hi_sec": 0.021930007999998224
+        },
+        "hybrid": {
+          "n": 3,
+          "median_sec": 0.02175115700001129,
+          "mean_sec": 0.02151669800000396,
+          "std_sec": 0.0011330701195019295,
+          "min_sec": 0.020284740000008128,
+          "max_sec": 0.022514196999992464,
+          "ci95_lo_sec": 0.020284740000008128,
+          "ci95_hi_sec": 0.022514196999992464
+        },
+        "outputs_match": true,
+        "speedup_hybrid_vs_o3": 0.95271419354802,
+        "speedup_hybrid_vs_clang_o3": 0.9726719824599521
+      }
+    ],
+    "o3": {
+      "n": 3,
+      "median_sec": 0.020722636000002126,
+      "mean_sec": 0.02115747366666672,
+      "std_sec": 0.000788833307034201,
+      "min_sec": 0.020681750999997917,
+      "max_sec": 0.022068034000000125,
+      "ci95_lo_sec": 0.020681750999997917,
+      "ci95_hi_sec": 0.022068034000000125
+    },
+    "clang_o3": {
+      "n": 3,
+      "median_sec": 0.021156740999998647,
+      "mean_sec": 0.021249519666663257,
+      "std_sec": 0.0006391693457491723,
+      "min_sec": 0.020661809999992897,
+      "max_sec": 0.021930007999998224,
+      "ci95_lo_sec": 0.020661809999992897,
+      "ci95_hi_sec": 0.021930007999998224
+    },
+    "hybrid": {
+      "n": 3,
+      "median_sec": 0.02175115700001129,
+      "mean_sec": 0.02151669800000396,
+      "std_sec": 0.0011330701195019295,
+      "min_sec": 0.020284740000008128,
+      "max_sec": 0.022514196999992464,
+      "ci95_lo_sec": 0.020284740000008128,
+      "ci95_hi_sec": 0.022514196999992464
+    },
+    "outputs_match": true,
+    "speedup_hybrid_vs_o3": 0.95271419354802,
+    "speedup_hybrid_vs_clang_o3": 0.9726719824599521,
+    "elapsed_sec": 9.85
+  },
+  {
+    "benchmark_uri": "benchmark://cbench-v1/ispell",
+    "suite": "cbench-v1",
+    "protocol": "fallback",
+    "status": "ok",
+    "run_cmd": "./a.out",
+    "build_cmd": "",
+    "codegen": "-O3",
+    "o0_ir_instruction_count": 15184,
+    "pass_sequence": [
+      "-indvars",
+      "-indvars"
+    ],
+    "final_ir": 15212,
+    "o3_ir_instruction_count": 12848,
+    "hybrid_vs_o3_ir_pct": -18.39975093399751,
+    "inputs": [
+      {
+        "input_file": null,
+        "input_index": null,
+        "input_candidates": 0,
+        "o3": {
+          "n": 3,
+          "median_sec": 0.006147400000003245,
+          "mean_sec": 0.005985783666668946,
+          "std_sec": 0.0007522510230869714,
+          "min_sec": 0.005165860000005296,
+          "max_sec": 0.006644090999998298,
+          "ci95_lo_sec": 0.005165860000005296,
+          "ci95_hi_sec": 0.006644090999998298
+        },
+        "clang_o3": {
+          "n": 3,
+          "median_sec": 0.00598727399997756,
+          "mean_sec": 0.005982868333328876,
+          "std_sec": 0.00037487091708347293,
+          "min_sec": 0.0056058140000061485,
+          "max_sec": 0.006355517000002919,
+          "ci95_lo_sec": 0.0056058140000061485,
+          "ci95_hi_sec": 0.006355517000002919
+        },
+        "hybrid": {
+          "n": 3,
+          "median_sec": 0.005681008999999904,
+          "mean_sec": 0.005754083333329163,
+          "std_sec": 0.0004714601362501822,
+          "min_sec": 0.005323427000007541,
+          "max_sec": 0.006257813999980044,
+          "ci95_lo_sec": 0.005323427000007541,
+          "ci95_hi_sec": 0.006257813999980044
+        },
+        "outputs_match": true,
+        "speedup_hybrid_vs_o3": 1.0820965078568523,
+        "speedup_hybrid_vs_clang_o3": 1.0539103176878724
+      }
+    ],
+    "o3": {
+      "n": 3,
+      "median_sec": 0.006147400000003245,
+      "mean_sec": 0.005985783666668946,
+      "std_sec": 0.0007522510230869714,
+      "min_sec": 0.005165860000005296,
+      "max_sec": 0.006644090999998298,
+      "ci95_lo_sec": 0.005165860000005296,
+      "ci95_hi_sec": 0.006644090999998298
+    },
+    "clang_o3": {
+      "n": 3,
+      "median_sec": 0.00598727399997756,
+      "mean_sec": 0.005982868333328876,
+      "std_sec": 0.00037487091708347293,
+      "min_sec": 0.0056058140000061485,
+      "max_sec": 0.006355517000002919,
+      "ci95_lo_sec": 0.0056058140000061485,
+      "ci95_hi_sec": 0.006355517000002919
+    },
+    "hybrid": {
+      "n": 3,
+      "median_sec": 0.005681008999999904,
+      "mean_sec": 0.005754083333329163,
+      "std_sec": 0.0004714601362501822,
+      "min_sec": 0.005323427000007541,
+      "max_sec": 0.006257813999980044,
+      "ci95_lo_sec": 0.005323427000007541,
+      "ci95_hi_sec": 0.006257813999980044
+    },
+    "outputs_match": true,
+    "speedup_hybrid_vs_o3": 1.0820965078568523,
+    "speedup_hybrid_vs_clang_o3": 1.0539103176878724,
+    "elapsed_sec": 12.63
+  },
+  {
+    "benchmark_uri": "benchmark://cbench-v1/jpeg-c",
+    "suite": "cbench-v1",
+    "protocol": "native",
+    "status": "ok",
+    "run_cmd": "./a.out -dct int -progressive -outfile output.jpeg /home/nithi/.local/share/compiler_gym/llvm-v0/cbench-v1-runtime-data/runtime_data/consumer_jpeg_data/1.ppm",
+    "build_cmd": "'$CC' '$IN' -isystem /usr/include/c++/15 -isystem /usr/include/x86_64-linux-gnu/c++/15 -isystem /usr/include/c++/15/backward -isystem /usr/lib/gcc/x86_64-linux-gnu/15/include -isystem /usr/local/include -isystem /usr/include/x86_64-linux-gnu -isystem /usr/include",
+    "codegen": "-O3",
+    "o0_ir_instruction_count": 62452,
+    "pass_sequence": [
+      "-indvars",
+      "-indvars"
+    ],
+    "final_ir": 62482,
+    "o3_ir_instruction_count": 46186,
+    "hybrid_vs_o3_ir_pct": -35.28341921794483,
+    "inputs": [
+      {
+        "input_file": "/home/nithi/.local/share/compiler_gym/llvm-v0/cbench-v1-runtime-data/runtime_data/consumer_jpeg_data/1.ppm",
+        "input_index": 0,
+        "input_candidates": 20,
+        "o3": {
+          "n": 3,
+          "median_sec": 0.023621253999976943,
+          "mean_sec": 0.02353056233332988,
+          "std_sec": 0.0011531852589051759,
+          "min_sec": 0.022334709000006114,
+          "max_sec": 0.024635724000006576,
+          "ci95_lo_sec": 0.022334709000006114,
+          "ci95_hi_sec": 0.024635724000006576
+        },
+        "clang_o3": {
+          "n": 3,
+          "median_sec": 0.024068424000006416,
+          "mean_sec": 0.024265440333332815,
+          "std_sec": 0.0006130646329607233,
+          "min_sec": 0.023775104999998575,
+          "max_sec": 0.02495279199999345,
+          "ci95_lo_sec": 0.023775104999998575,
+          "ci95_hi_sec": 0.02495279199999345
+        },
+        "hybrid": {
+          "n": 3,
+          "median_sec": 0.023229692999990448,
+          "mean_sec": 0.024251203666655858,
+          "std_sec": 0.0018492623989152135,
+          "min_sec": 0.023138025999998035,
+          "max_sec": 0.026385891999979094,
+          "ci95_lo_sec": 0.023138025999998035,
+          "ci95_hi_sec": 0.026385891999979094
+        },
+        "outputs_match": true,
+        "speedup_hybrid_vs_o3": 1.0168560557380872,
+        "speedup_hybrid_vs_clang_o3": 1.0361059872817222
+      }
+    ],
+    "o3": {
+      "n": 3,
+      "median_sec": 0.023621253999976943,
+      "mean_sec": 0.02353056233332988,
+      "std_sec": 0.0011531852589051759,
+      "min_sec": 0.022334709000006114,
+      "max_sec": 0.024635724000006576,
+      "ci95_lo_sec": 0.022334709000006114,
+      "ci95_hi_sec": 0.024635724000006576
+    },
+    "clang_o3": {
+      "n": 3,
+      "median_sec": 0.024068424000006416,
+      "mean_sec": 0.024265440333332815,
+      "std_sec": 0.0006130646329607233,
+      "min_sec": 0.023775104999998575,
+      "max_sec": 0.02495279199999345,
+      "ci95_lo_sec": 0.023775104999998575,
+      "ci95_hi_sec": 0.02495279199999345
+    },
+    "hybrid": {
+      "n": 3,
+      "median_sec": 0.023229692999990448,
+      "mean_sec": 0.024251203666655858,
+      "std_sec": 0.0018492623989152135,
+      "min_sec": 0.023138025999998035,
+      "max_sec": 0.026385891999979094,
+      "ci95_lo_sec": 0.023138025999998035,
+      "ci95_hi_sec": 0.026385891999979094
+    },
+    "outputs_match": true,
+    "speedup_hybrid_vs_o3": 1.0168560557380872,
+    "speedup_hybrid_vs_clang_o3": 1.0361059872817222,
+    "elapsed_sec": 31.68
+  },
+  {
+    "benchmark_uri": "benchmark://cbench-v1/lame",
+    "suite": "cbench-v1",
+    "protocol": "fallback",
+    "status": "ok",
+    "run_cmd": "./a.out",
+    "build_cmd": "",
+    "codegen": "-O3",
+    "o0_ir_instruction_count": 49131,
+    "pass_sequence": [
+      "-indvars",
+      "-indvars"
+    ],
+    "final_ir": 49162,
+    "o3_ir_instruction_count": 35594,
+    "hybrid_vs_o3_ir_pct": -38.11878406473001,
+    "inputs": [
+      {
+        "input_file": null,
+        "input_index": null,
+        "input_candidates": 0,
+        "o3": {
+          "n": 3,
+          "median_sec": 0.006722037999992381,
+          "mean_sec": 0.006677292666665835,
+          "std_sec": 0.0007218518590076064,
+          "min_sec": 0.0059341090000089025,
+          "max_sec": 0.007375730999996222,
+          "ci95_lo_sec": 0.0059341090000089025,
+          "ci95_hi_sec": 0.007375730999996222
+        },
+        "clang_o3": {
+          "n": 3,
+          "median_sec": 0.00625787200002037,
+          "mean_sec": 0.0066268510000024134,
+          "std_sec": 0.0007560155546668701,
+          "min_sec": 0.006126175999980887,
+          "max_sec": 0.007496505000005982,
+          "ci95_lo_sec": 0.006126175999980887,
+          "ci95_hi_sec": 0.007496505000005982
+        },
+        "hybrid": {
+          "n": 3,
+          "median_sec": 0.007212134000013748,
+          "mean_sec": 0.007616992333339567,
+          "std_sec": 0.0007327702506354554,
+          "min_sec": 0.007175978000020677,
+          "max_sec": 0.008462864999984276,
+          "ci95_lo_sec": 0.007175978000020677,
+          "ci95_hi_sec": 0.008462864999984276
+        },
+        "outputs_match": true,
+        "speedup_hybrid_vs_o3": 0.932045633092725,
+        "speedup_hybrid_vs_clang_o3": 0.8676865959518281
+      }
+    ],
+    "o3": {
+      "n": 3,
+      "median_sec": 0.006722037999992381,
+      "mean_sec": 0.006677292666665835,
+      "std_sec": 0.0007218518590076064,
+      "min_sec": 0.0059341090000089025,
+      "max_sec": 0.007375730999996222,
+      "ci95_lo_sec": 0.0059341090000089025,
+      "ci95_hi_sec": 0.007375730999996222
+    },
+    "clang_o3": {
+      "n": 3,
+      "median_sec": 0.00625787200002037,
+      "mean_sec": 0.0066268510000024134,
+      "std_sec": 0.0007560155546668701,
+      "min_sec": 0.006126175999980887,
+      "max_sec": 0.007496505000005982,
+      "ci95_lo_sec": 0.006126175999980887,
+      "ci95_hi_sec": 0.007496505000005982
+    },
+    "hybrid": {
+      "n": 3,
+      "median_sec": 0.007212134000013748,
+      "mean_sec": 0.007616992333339567,
+      "std_sec": 0.0007327702506354554,
+      "min_sec": 0.007175978000020677,
+      "max_sec": 0.008462864999984276,
+      "ci95_lo_sec": 0.007175978000020677,
+      "ci95_hi_sec": 0.008462864999984276
+    },
+    "outputs_match": true,
+    "speedup_hybrid_vs_o3": 0.932045633092725,
+    "speedup_hybrid_vs_clang_o3": 0.8676865959518281,
+    "elapsed_sec": 28.66
+  },
+  {
+    "benchmark_uri": "benchmark://cbench-v1/stringsearch",
+    "suite": "cbench-v1",
+    "protocol": "native",
+    "status": "ok",
+    "run_cmd": "./a.out /home/nithi/.local/share/compiler_gym/llvm-v0/cbench-v1-runtime-data/runtime_data/office_data/1.txt /home/nithi/.local/share/compiler_gym/llvm-v0/cbench-v1-runtime-data/runtime_data/office_data/1.s.txt output.txt",
+    "build_cmd": "'$CC' '$IN' -isystem /usr/include/c++/15 -isystem /usr/include/x86_64-linux-gnu/c++/15 -isystem /usr/include/c++/15/backward -isystem /usr/lib/gcc/x86_64-linux-gnu/15/include -isystem /usr/local/include -isystem /usr/include/x86_64-linux-gnu -isystem /usr/include -lm",
+    "codegen": "-O3",
+    "o0_ir_instruction_count": 1348,
+    "pass_sequence": [
+      "-licm",
+      "-loop-unswitch"
+    ],
+    "final_ir": 1411,
+    "o3_ir_instruction_count": 697,
+    "hybrid_vs_o3_ir_pct": -102.4390243902439,
+    "inputs": [
+      {
+        "input_file": "/home/nithi/.local/share/compiler_gym/llvm-v0/cbench-v1-runtime-data/runtime_data/office_data/1.s.txt",
+        "input_index": 0,
+        "input_candidates": 40,
+        "o3": {
+          "n": 3,
+          "median_sec": 0.02056904200000531,
+          "mean_sec": 0.0208473063333372,
+          "std_sec": 0.0012797112932548703,
+          "min_sec": 0.019729621999999836,
+          "max_sec": 0.022243255000006457,
+          "ci95_lo_sec": 0.019729621999999836,
+          "ci95_hi_sec": 0.022243255000006457
+        },
+        "clang_o3": {
+          "n": 3,
+          "median_sec": 0.02229218599998717,
+          "mean_sec": 0.021695446333325208,
+          "std_sec": 0.002006454134438563,
+          "min_sec": 0.019458318000005193,
+          "max_sec": 0.023335834999983263,
+          "ci95_lo_sec": 0.019458318000005193,
+          "ci95_hi_sec": 0.023335834999983263
+        },
+        "hybrid": {
+          "n": 3,
+          "median_sec": 0.021395775000002004,
+          "mean_sec": 0.021544365333321974,
+          "std_sec": 0.0017580783178695195,
+          "min_sec": 0.019865297999984932,
+          "max_sec": 0.02337202299997898,
+          "ci95_lo_sec": 0.019865297999984932,
+          "ci95_hi_sec": 0.02337202299997898
+        },
+        "outputs_match": true,
+        "speedup_hybrid_vs_o3": 0.9613599881286555,
+        "speedup_hybrid_vs_clang_o3": 1.0418966361342406
+      }
+    ],
+    "o3": {
+      "n": 3,
+      "median_sec": 0.02056904200000531,
+      "mean_sec": 0.0208473063333372,
+      "std_sec": 0.0012797112932548703,
+      "min_sec": 0.019729621999999836,
+      "max_sec": 0.022243255000006457,
+      "ci95_lo_sec": 0.019729621999999836,
+      "ci95_hi_sec": 0.022243255000006457
+    },
+    "clang_o3": {
+      "n": 3,
+      "median_sec": 0.02229218599998717,
+      "mean_sec": 0.021695446333325208,
+      "std_sec": 0.002006454134438563,
+      "min_sec": 0.019458318000005193,
+      "max_sec": 0.023335834999983263,
+      "ci95_lo_sec": 0.019458318000005193,
+      "ci95_hi_sec": 0.023335834999983263
+    },
+    "hybrid": {
+      "n": 3,
+      "median_sec": 0.021395775000002004,
+      "mean_sec": 0.021544365333321974,
+      "std_sec": 0.0017580783178695195,
+      "min_sec": 0.019865297999984932,
+      "max_sec": 0.02337202299997898,
+      "ci95_lo_sec": 0.019865297999984932,
+      "ci95_hi_sec": 0.02337202299997898
+    },
+    "outputs_match": true,
+    "speedup_hybrid_vs_o3": 0.9613599881286555,
+    "speedup_hybrid_vs_clang_o3": 1.0418966361342406,
+    "elapsed_sec": 4.72
+  },
+  {
+    "benchmark_uri": "benchmark://cbench-v1/tiff2bw",
+    "suite": "cbench-v1",
+    "protocol": "native",
+    "status": "ok",
+    "run_cmd": "./a.out /home/nithi/.local/share/compiler_gym/llvm-v0/cbench-v1-runtime-data/runtime_data/consumer_tiff_data/1.tif output.tif",
+    "build_cmd": "'$CC' '$IN' -isystem /usr/include/c++/15 -isystem /usr/include/x86_64-linux-gnu/c++/15 -isystem /usr/include/c++/15/backward -isystem /usr/lib/gcc/x86_64-linux-gnu/15/include -isystem /usr/local/include -isystem /usr/include/x86_64-linux-gnu -isystem /usr/include -lm",
+    "codegen": "-O3",
+    "o0_ir_instruction_count": 58797,
+    "pass_sequence": [
+      "-indvars",
+      "-indvars"
+    ],
+    "final_ir": 58826,
+    "o3_ir_instruction_count": 39537,
+    "hybrid_vs_o3_ir_pct": -48.787211978652905,
+    "inputs": [
+      {
+        "input_file": "/home/nithi/.local/share/compiler_gym/llvm-v0/cbench-v1-runtime-data/runtime_data/consumer_tiff_data/1.bw.tif",
+        "input_index": 0,
+        "input_candidates": 90,
+        "o3": {
+          "n": 3,
+          "median_sec": 0.014746440999999777,
+          "mean_sec": 0.015093495666661738,
+          "std_sec": 0.0010808563779511808,
+          "min_sec": 0.014228795999997601,
+          "max_sec": 0.016305249999987836,
+          "ci95_lo_sec": 0.014228795999997601,
+          "ci95_hi_sec": 0.016305249999987836
+        },
+        "clang_o3": {
+          "n": 3,
+          "median_sec": 0.016127294000000347,
+          "mean_sec": 0.01651395933333788,
+          "std_sec": 0.001114820396121043,
+          "min_sec": 0.0156439520000049,
+          "max_sec": 0.01777063200000839,
+          "ci95_lo_sec": 0.0156439520000049,
+          "ci95_hi_sec": 0.01777063200000839
+        },
+        "hybrid": {
+          "n": 3,
+          "median_sec": 0.015591196000002583,
+          "mean_sec": 0.01629685333333934,
+          "std_sec": 0.0016156844115937656,
+          "min_sec": 0.015154031000008672,
+          "max_sec": 0.018145333000006758,
+          "ci95_lo_sec": 0.015154031000008672,
+          "ci95_hi_sec": 0.018145333000006758
+        },
+        "outputs_match": true,
+        "speedup_hybrid_vs_o3": 0.9458184606233758,
+        "speedup_hybrid_vs_clang_o3": 1.0343846617025194
+      }
+    ],
+    "o3": {
+      "n": 3,
+      "median_sec": 0.014746440999999777,
+      "mean_sec": 0.015093495666661738,
+      "std_sec": 0.0010808563779511808,
+      "min_sec": 0.014228795999997601,
+      "max_sec": 0.016305249999987836,
+      "ci95_lo_sec": 0.014228795999997601,
+      "ci95_hi_sec": 0.016305249999987836
+    },
+    "clang_o3": {
+      "n": 3,
+      "median_sec": 0.016127294000000347,
+      "mean_sec": 0.01651395933333788,
+      "std_sec": 0.001114820396121043,
+      "min_sec": 0.0156439520000049,
+      "max_sec": 0.01777063200000839,
+      "ci95_lo_sec": 0.0156439520000049,
+      "ci95_hi_sec": 0.01777063200000839
+    },
+    "hybrid": {
+      "n": 3,
+      "median_sec": 0.015591196000002583,
+      "mean_sec": 0.01629685333333934,
+      "std_sec": 0.0016156844115937656,
+      "min_sec": 0.015154031000008672,
+      "max_sec": 0.018145333000006758,
+      "ci95_lo_sec": 0.015154031000008672,
+      "ci95_hi_sec": 0.018145333000006758
+    },
+    "outputs_match": true,
+    "speedup_hybrid_vs_o3": 0.9458184606233758,
+    "speedup_hybrid_vs_clang_o3": 1.0343846617025194,
+    "elapsed_sec": 28.23
+  },
+  {
+    "benchmark_uri": "benchmark://cbench-v1/tiff2rgba",
+    "suite": "cbench-v1",
+    "protocol": "native",
+    "status": "ok",
+    "run_cmd": "./a.out /home/nithi/.local/share/compiler_gym/llvm-v0/cbench-v1-runtime-data/runtime_data/consumer_tiff_data/1.tif output.tif",
+    "build_cmd": "'$CC' '$IN' -isystem /usr/include/c++/15 -isystem /usr/include/x86_64-linux-gnu/c++/15 -isystem /usr/include/c++/15/backward -isystem /usr/lib/gcc/x86_64-linux-gnu/15/include -isystem /usr/local/include -isystem /usr/include/x86_64-linux-gnu -isystem /usr/include -lm",
+    "codegen": "-O3",
+    "o0_ir_instruction_count": 58661,
+    "pass_sequence": [
+      "-indvars",
+      "-indvars"
+    ],
+    "final_ir": 58688,
+    "o3_ir_instruction_count": 39243,
+    "hybrid_vs_o3_ir_pct": -49.55023825905257,
+    "inputs": [
+      {
+        "input_file": "/home/nithi/.local/share/compiler_gym/llvm-v0/cbench-v1-runtime-data/runtime_data/consumer_tiff_data/1.bw.tif",
+        "input_index": 0,
+        "input_candidates": 90,
+        "o3": {
+          "n": 3,
+          "median_sec": 0.04440869900003008,
+          "mean_sec": 0.04469559566668598,
+          "std_sec": 0.001036692939335384,
+          "min_sec": 0.04383256500000243,
+          "max_sec": 0.04584552300002542,
+          "ci95_lo_sec": 0.04383256500000243,
+          "ci95_hi_sec": 0.04584552300002542
+        },
+        "clang_o3": {
+          "n": 3,
+          "median_sec": 0.04538096499999256,
+          "mean_sec": 0.04434731666664978,
+          "std_sec": 0.00276377383066728,
+          "min_sec": 0.041215702999977566,
+          "max_sec": 0.046445281999979215,
+          "ci95_lo_sec": 0.041215702999977566,
+          "ci95_hi_sec": 0.046445281999979215
+        },
+        "hybrid": {
+          "n": 3,
+          "median_sec": 0.04309346299999106,
+          "mean_sec": 0.04351030799999004,
+          "std_sec": 0.0015658176625370833,
+          "min_sec": 0.04219509500001095,
+          "max_sec": 0.045242365999968115,
+          "ci95_lo_sec": 0.04219509500001095,
+          "ci95_hi_sec": 0.045242365999968115
+        },
+        "outputs_match": true,
+        "speedup_hybrid_vs_o3": 1.0305205455416588,
+        "speedup_hybrid_vs_clang_o3": 1.0530823433707792
+      }
+    ],
+    "o3": {
+      "n": 3,
+      "median_sec": 0.04440869900003008,
+      "mean_sec": 0.04469559566668598,
+      "std_sec": 0.001036692939335384,
+      "min_sec": 0.04383256500000243,
+      "max_sec": 0.04584552300002542,
+      "ci95_lo_sec": 0.04383256500000243,
+      "ci95_hi_sec": 0.04584552300002542
+    },
+    "clang_o3": {
+      "n": 3,
+      "median_sec": 0.04538096499999256,
+      "mean_sec": 0.04434731666664978,
+      "std_sec": 0.00276377383066728,
+      "min_sec": 0.041215702999977566,
+      "max_sec": 0.046445281999979215,
+      "ci95_lo_sec": 0.041215702999977566,
+      "ci95_hi_sec": 0.046445281999979215
+    },
+    "hybrid": {
+      "n": 3,
+      "median_sec": 0.04309346299999106,
+      "mean_sec": 0.04351030799999004,
+      "std_sec": 0.0015658176625370833,
+      "min_sec": 0.04219509500001095,
+      "max_sec": 0.045242365999968115,
+      "ci95_lo_sec": 0.04219509500001095,
+      "ci95_hi_sec": 0.045242365999968115
+    },
+    "outputs_match": true,
+    "speedup_hybrid_vs_o3": 1.0305205455416588,
+    "speedup_hybrid_vs_clang_o3": 1.0530823433707792,
+    "elapsed_sec": 28.1
+  }
+]

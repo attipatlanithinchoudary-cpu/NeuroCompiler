@@ -1,0 +1,96 @@
+{
+  "benchmarks_evaluated": 2,
+  "wins": 1,
+  "losses": 1,
+  "ties": 0,
+  "wins_vs_clang_o3": 1,
+  "losses_vs_clang_o3": 1,
+  "ties_vs_clang_o3": 0,
+  "geo_mean_speedup": 0.9985237466877673,
+  "geo_mean_speedup_vs_clang_o3": 1.0008278306441247,
+  "geo_mean_log2_speedup": -0.002131356931381185,
+  "mean_speedup": 0.998784698219902,
+  "rows": [
+    {
+      "benchmark_uri": "benchmark://cbench-v1/bzip2",
+      "suite": "cbench-v1",
+      "protocol": "native",
+      "codegen": "-O3",
+      "speedup_hybrid_vs_o3": 0.9759548778341834,
+      "log2_speedup": -0.03511364692470241,
+      "speedup_hybrid_vs_clang_o3": 0.9828684925508749,
+      "log2_speedup_vs_clang_o3": -0.02492969748397289,
+      "o3_median_sec": 8.66287656700024,
+      "clang_o3_median_sec": 8.724243943999682,
+      "hybrid_median_sec": 8.876308488999712,
+      "o3_ci": [
+        8.594795197999701,
+        9.040888731999985
+      ],
+      "clang_o3_ci": [
+        8.677885988000526,
+        8.862538590999975
+      ],
+      "hybrid_ci": [
+        8.851280394000241,
+        9.25556299100026
+      ],
+      "outputs_match": true,
+      "input_file": "/home/nithi/.local/share/compiler_gym/llvm-v0/cbench-v1-runtime-data/runtime_data/bzip2_data/8.bz2",
+      "inputs_count": 2,
+      "pass_sequence": [
+        "-sroa",
+        "-sroa"
+      ],
+      "hybrid_vs_o3_ir_pct": 1.6850122593771193
+    },
+    {
+      "benchmark_uri": "benchmark://cbench-v1/gsm",
+      "suite": "cbench-v1",
+      "protocol": "native",
+      "codegen": "-O3",
+      "speedup_hybrid_vs_o3": 1.0216145186056205,
+      "log2_speedup": 0.03085093306194004,
+      "speedup_hybrid_vs_clang_o3": 1.0191153284323815,
+      "log2_speedup_vs_clang_o3": 0.02731732367515572,
+      "o3_median_sec": 1.0856352490000063,
+      "clang_o3_median_sec": 1.0829794440005571,
+      "hybrid_median_sec": 1.0626662300001044,
+      "o3_ci": [
+        1.0464708389999942,
+        1.1317964370000482
+      ],
+      "clang_o3_ci": [
+        1.0653856950002591,
+        1.098463308000646
+      ],
+      "hybrid_ci": [
+        1.0413921079998545,
+        1.0825032070006273
+      ],
+      "outputs_match": true,
+      "input_file": "/home/nithi/.local/share/compiler_gym/llvm-v0/cbench-v1-runtime-data/runtime_data/telecom_gsm_data/2.au",
+      "inputs_count": 2,
+      "pass_sequence": [
+        "-sroa",
+        "-sroa"
+      ],
+      "hybrid_vs_o3_ir_pct": -0.38891104906262464
+    }
+  ],
+  "wilcoxon_signed_rank": {
+    "statistic": 1.0,
+    "p_value": 0.75,
+    "alternative": "hybrid faster than opt -O3 (on log2 speedups)"
+  },
+  "wilcoxon_signed_rank_vs_clang_o3": {
+    "statistic": 2.0,
+    "p_value": 0.5,
+    "alternative": "hybrid faster than clang -O3 (on log2 speedups)"
+  },
+  "total_rows": 3,
+  "failed": [
+    "benchmark://cbench-v1/tiff2rgba"
+  ],
+  "skipped": []
+}

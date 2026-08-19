@@ -1,0 +1,209 @@
+{
+  "source": "results/o3_runtime_vs_o3_summary.json",
+  "benchmarks_evaluated": 22,
+  "hybrid_geo_mean_speedup_vs_clang_o3": 1.0174961687490431,
+  "portfolio_geo_mean_speedup_vs_clang_o3": 1.061805025242556,
+  "wins_portfolio_vs_clang_o3": 11,
+  "ties_portfolio_vs_clang_o3": 11,
+  "losses_portfolio_vs_clang_o3": 0,
+  "rows": [
+    {
+      "benchmark_uri": "benchmark://cbench-v1/bitcount",
+      "clang_o3_median_sec": 0.033165873028337955,
+      "hybrid_median_sec": 0.032334065064787865,
+      "portfolio_arm": "hybrid",
+      "portfolio_median_sec": 0.032334065064787865,
+      "speedup_portfolio_vs_clang_o3": 1.0257254373022195,
+      "speedup_hybrid_vs_clang_o3": 1.0257254373022195
+    },
+    {
+      "benchmark_uri": "benchmark://cbench-v1/bzip2",
+      "clang_o3_median_sec": 4.274323724908754,
+      "hybrid_median_sec": 4.252209912054241,
+      "portfolio_arm": "hybrid",
+      "portfolio_median_sec": 4.252209912054241,
+      "speedup_portfolio_vs_clang_o3": 1.0052005459071587,
+      "speedup_hybrid_vs_clang_o3": 1.0052005459071587
+    },
+    {
+      "benchmark_uri": "benchmark://cbench-v1/dijkstra",
+      "clang_o3_median_sec": 0.6039066279772669,
+      "hybrid_median_sec": 0.614006568910554,
+      "portfolio_arm": "clang_o3",
+      "portfolio_median_sec": 0.6039066279772669,
+      "speedup_portfolio_vs_clang_o3": 1.0,
+      "speedup_hybrid_vs_clang_o3": 0.9835507607822377
+    },
+    {
+      "benchmark_uri": "benchmark://cbench-v1/gsm",
+      "clang_o3_median_sec": 0.6342286600265652,
+      "hybrid_median_sec": 0.6269075770396739,
+      "portfolio_arm": "hybrid",
+      "portfolio_median_sec": 0.6269075770396739,
+      "speedup_portfolio_vs_clang_o3": 1.0116780898094457,
+      "speedup_hybrid_vs_clang_o3": 1.0116780898094457
+    },
+    {
+      "benchmark_uri": "benchmark://cbench-v1/ispell",
+      "clang_o3_median_sec": 0.0012799068354070187,
+      "hybrid_median_sec": 0.0012567180674523115,
+      "portfolio_arm": "hybrid",
+      "portfolio_median_sec": 0.0012567180674523115,
+      "speedup_portfolio_vs_clang_o3": 1.0184518457681735,
+      "speedup_hybrid_vs_clang_o3": 1.0184518457681735
+    },
+    {
+      "benchmark_uri": "benchmark://cbench-v1/jpeg-c",
+      "clang_o3_median_sec": 0.988131940132007,
+      "hybrid_median_sec": 1.0131158530712128,
+      "portfolio_arm": "clang_o3",
+      "portfolio_median_sec": 0.988131940132007,
+      "speedup_portfolio_vs_clang_o3": 1.0,
+      "speedup_hybrid_vs_clang_o3": 0.9753395301598843
+    },
+    {
+      "benchmark_uri": "benchmark://cbench-v1/lame",
+      "clang_o3_median_sec": 0.0018737157806754112,
+      "hybrid_median_sec": 0.0013440269976854324,
+      "portfolio_arm": "hybrid",
+      "portfolio_median_sec": 0.0013440269976854324,
+      "speedup_portfolio_vs_clang_o3": 1.394105761195395,
+      "speedup_hybrid_vs_clang_o3": 1.394105761195395
+    },
+    {
+      "benchmark_uri": "benchmark://cbench-v1/stringsearch",
+      "clang_o3_median_sec": 0.027431082911789417,
+      "hybrid_median_sec": 0.027665851870551705,
+      "portfolio_arm": "clang_o3",
+      "portfolio_median_sec": 0.027431082911789417,
+      "speedup_portfolio_vs_clang_o3": 1.0,
+      "speedup_hybrid_vs_clang_o3": 0.9915141250715586
+    },
+    {
+      "benchmark_uri": "benchmark://cbench-v1/tiff2bw",
+      "clang_o3_median_sec": 2.3981403140351176,
+      "hybrid_median_sec": 2.4671752259600908,
+      "portfolio_arm": "clang_o3",
+      "portfolio_median_sec": 2.3981403140351176,
+      "speedup_portfolio_vs_clang_o3": 1.0,
+      "speedup_hybrid_vs_clang_o3": 0.9720186425355708
+    },
+    {
+      "benchmark_uri": "benchmark://cbench-v1/tiff2rgba",
+      "clang_o3_median_sec": 2.217596931848675,
+      "hybrid_median_sec": 2.347493286943063,
+      "portfolio_arm": "clang_o3",
+      "portfolio_median_sec": 2.217596931848675,
+      "speedup_portfolio_vs_clang_o3": 1.0,
+      "speedup_hybrid_vs_clang_o3": 0.9446659311799179
+    },
+    {
+      "benchmark_uri": "benchmark://chstone-v0/adpcm",
+      "clang_o3_median_sec": 0.0011705979704856873,
+      "hybrid_median_sec": 0.0011548269540071487,
+      "portfolio_arm": "hybrid",
+      "portfolio_median_sec": 0.0011548269540071487,
+      "speedup_portfolio_vs_clang_o3": 1.013656605800388,
+      "speedup_hybrid_vs_clang_o3": 1.013656605800388
+    },
+    {
+      "benchmark_uri": "benchmark://chstone-v0/aes",
+      "clang_o3_median_sec": 0.0018966561183333397,
+      "hybrid_median_sec": 0.0019201659597456455,
+      "portfolio_arm": "clang_o3",
+      "portfolio_median_sec": 0.0018966561183333397,
+      "speedup_portfolio_vs_clang_o3": 1.0,
+      "speedup_hybrid_vs_clang_o3": 0.9877563492400313
+    },
+    {
+      "benchmark_uri": "benchmark://chstone-v0/sha",
+      "clang_o3_median_sec": 0.0011202869936823845,
+      "hybrid_median_sec": 0.001185817178338766,
+      "portfolio_arm": "clang_o3",
+      "portfolio_median_sec": 0.0011202869936823845,
+      "speedup_portfolio_vs_clang_o3": 1.0,
+      "speedup_hybrid_vs_clang_o3": 0.9447383746386739
+    },
+    {
+      "benchmark_uri": "generator://csmith-v0/12",
+      "clang_o3_median_sec": 0.0017308560200035572,
+      "hybrid_median_sec": 0.0023605849128216505,
+      "portfolio_arm": "clang_o3",
+      "portfolio_median_sec": 0.0017308560200035572,
+      "speedup_portfolio_vs_clang_o3": 1.0,
+      "speedup_hybrid_vs_clang_o3": 0.7332318403808796
+    },
+    {
+      "benchmark_uri": "generator://csmith-v0/17",
+      "clang_o3_median_sec": 0.001951135927811265,
+      "hybrid_median_sec": 0.0017090258188545704,
+      "portfolio_arm": "hybrid",
+      "portfolio_median_sec": 0.0017090258188545704,
+      "speedup_portfolio_vs_clang_o3": 1.1416655654266021,
+      "speedup_hybrid_vs_clang_o3": 1.1416655654266021
+    },
+    {
+      "benchmark_uri": "generator://csmith-v0/24",
+      "clang_o3_median_sec": 0.0023457948118448257,
+      "hybrid_median_sec": 0.0015968559309840202,
+      "portfolio_arm": "hybrid",
+      "portfolio_median_sec": 0.0015968559309840202,
+      "speedup_portfolio_vs_clang_o3": 1.4690084223185318,
+      "speedup_hybrid_vs_clang_o3": 1.4690084223185318
+    },
+    {
+      "benchmark_uri": "generator://csmith-v0/26",
+      "clang_o3_median_sec": 0.0017736258450895548,
+      "hybrid_median_sec": 0.0017107960302382708,
+      "portfolio_arm": "hybrid",
+      "portfolio_median_sec": 0.0017107960302382708,
+      "speedup_portfolio_vs_clang_o3": 1.0367254855288233,
+      "speedup_hybrid_vs_clang_o3": 1.0367254855288233
+    },
+    {
+      "benchmark_uri": "generator://csmith-v0/29",
+      "clang_o3_median_sec": 0.0016188959125429392,
+      "hybrid_median_sec": 0.001637627137824893,
+      "portfolio_arm": "clang_o3",
+      "portfolio_median_sec": 0.0016188959125429392,
+      "speedup_portfolio_vs_clang_o3": 1.0,
+      "speedup_hybrid_vs_clang_o3": 0.9885619718620242
+    },
+    {
+      "benchmark_uri": "generator://csmith-v0/4",
+      "clang_o3_median_sec": 0.0019371961243450642,
+      "hybrid_median_sec": 0.0023096641525626183,
+      "portfolio_arm": "clang_o3",
+      "portfolio_median_sec": 0.0019371961243450642,
+      "speedup_portfolio_vs_clang_o3": 1.0,
+      "speedup_hybrid_vs_clang_o3": 0.8387349832639982
+    },
+    {
+      "benchmark_uri": "generator://csmith-v0/6",
+      "clang_o3_median_sec": 0.0017458668444305658,
+      "hybrid_median_sec": 0.00220958492718637,
+      "portfolio_arm": "clang_o3",
+      "portfolio_median_sec": 0.0017458668444305658,
+      "speedup_portfolio_vs_clang_o3": 1.0,
+      "speedup_hybrid_vs_clang_o3": 0.7901333969786393
+    },
+    {
+      "benchmark_uri": "generator://csmith-v0/8",
+      "clang_o3_median_sec": 0.0024893449153751135,
+      "hybrid_median_sec": 0.0017736658919602633,
+      "portfolio_arm": "hybrid",
+      "portfolio_median_sec": 0.0017736658919602633,
+      "speedup_portfolio_vs_clang_o3": 1.4035027265613587,
+      "speedup_hybrid_vs_clang_o3": 1.4035027265613587
+    },
+    {
+      "benchmark_uri": "generator://csmith-v0/9",
+      "clang_o3_median_sec": 0.0017266259528696537,
+      "hybrid_median_sec": 0.0016908561810851097,
+      "portfolio_arm": "hybrid",
+      "portfolio_median_sec": 0.0016908561810851097,
+      "speedup_portfolio_vs_clang_o3": 1.0211548280597045,
+      "speedup_hybrid_vs_clang_o3": 1.0211548280597045
+    }
+  ]
+}
