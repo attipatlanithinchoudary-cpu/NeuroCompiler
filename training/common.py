@@ -130,10 +130,17 @@ SCALE_FREE_RATIO_COLS: List[str] = [
     "pre_insts_per_block",
 ]
 
+SCALE_FREE_AUTOPHASE_COLS: List[str] = [
+    f"pre_autophase_{name}_per_total_inst"
+    for name in AUTOPHASE_FEATURE_NAMES
+    if name != "TotalInsts"
+]
+
+SCALE_FREE_DERIVED_COLS: List[str] = SCALE_FREE_RATIO_COLS + SCALE_FREE_AUTOPHASE_COLS
+
 
 def derive_ratio_features(row: Dict[str, object], prefix: str = "pre_") -> Dict[str, float]:
-    """Compute the 5 scale-free ratio features from a row (or flattened state
-    dict) that carries ``{prefix}ir_instruction_count`` etc."""
+    """Compute scale-free features from a row or flattened state dict."""
     def val(name: str) -> float:
         try:
             return float(row.get(f"{prefix}{name}", 0) or 0)
@@ -150,10 +157,18 @@ def derive_ratio_features(row: Dict[str, object], prefix: str = "pre_") -> Dict[
     def ratio(a: float, b: float) -> float:
         return (a / b) if b else 0.0
 
-    return {
+    out = {
         f"{prefix}ir_per_func": ratio(ir, funcs),
         f"{prefix}mem_frac": ratio(mem, insts),
         f"{prefix}size_per_inst": ratio(size, insts),
         f"{prefix}blocks_per_func": ratio(blocks, funcs),
         f"{prefix}insts_per_block": ratio(insts, blocks),
     }
+    autophase_total = val("autophase_TotalInsts") or insts or ir
+    for name in AUTOPHASE_FEATURE_NAMES:
+        if name == "TotalInsts":
+            continue
+        out[f"{prefix}autophase_{name}_per_total_inst"] = ratio(
+            val(f"autophase_{name}"), autophase_total
+        )
+    return out

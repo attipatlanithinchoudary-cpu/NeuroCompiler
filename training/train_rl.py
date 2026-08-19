@@ -48,7 +48,13 @@ import sys
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from training.common import get_feature_cols, safe_float, load_csv_rows  # noqa: E402
+from training.common import (  # noqa: E402
+    SCALE_FREE_DERIVED_COLS,
+    derive_ratio_features,
+    get_feature_cols,
+    load_csv_rows,
+    safe_float,
+)
 
 LOGGER = logging.getLogger("train_rl")
 DEFAULT_RL_INPUT = PROJECT_ROOT / "datasets" / "replay_buffer" / "rl_experiences.csv"
@@ -407,6 +413,18 @@ def parse_args():
         "counts). Use for scale-free / derived state representations, e.g. "
         "--feature-cols=pre_autophase_TotalInsts,pre_ir_per_func.",
     )
+    p.add_argument(
+        "--scale-free-derived",
+        action="store_true",
+        help="Use derived scale-free core ratios plus Autophase-per-total-inst "
+        "features for OOD/generalization experiments.",
+    )
+    p.add_argument(
+        "--drop-self-loops",
+        action="store_true",
+        help="Drop transitions where post_state_id equals pre_state_id before "
+        "Q training. These no-op rows often carry noisy runtime rewards.",
+    )
     p.add_argument("--log-level", default="INFO")
     return p.parse_args()
 
@@ -421,6 +439,17 @@ def main():
 
     rows, fieldnames = load_csv_rows(input_path, max_rows=args.max_rows)
     LOGGER.info(f"Loaded {len(rows)} RL transitions, {len(fieldnames)} cols")
+    for row in rows:
+        row.update({k: str(v) for k, v in derive_ratio_features(row, "pre_").items()})
+        row.update({k: str(v) for k, v in derive_ratio_features(row, "post_").items()})
+    fieldnames = sorted(set(fieldnames) | set(rows[0].keys() if rows else []))
+    if args.drop_self_loops:
+        before = len(rows)
+        rows = [
+            row for row in rows
+            if (row.get("post_state_id") or "") != (row.get("pre_state_id") or "")
+        ]
+        LOGGER.info("Dropped %d self-loop transitions", before - len(rows))
 
     # Determine feature columns: RL uses pre_* fields
     # reuse common logic: look for pre_ autophase and core
@@ -429,7 +458,12 @@ def main():
         # fallback try without prefix
         from training.common import get_feature_cols
         pre_feature_cols = get_feature_cols(fieldnames, use_norm=False)
-    if args.feature_cols:
+    if args.scale_free_derived:
+        pre_feature_cols = list(SCALE_FREE_DERIVED_COLS)
+        LOGGER.info(
+            "Using --scale-free-derived: %d state features", len(pre_feature_cols)
+        )
+    elif args.feature_cols:
         override = [c.strip() for c in args.feature_cols.split(",") if c.strip()]
         missing = [c for c in override if c not in fieldnames]
         if missing:

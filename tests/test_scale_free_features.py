@@ -7,6 +7,8 @@ benchmark families) with 5 per-state ratios that are size-agnostic.
 """
 
 from training.common import (
+    SCALE_FREE_AUTOPHASE_COLS,
+    SCALE_FREE_DERIVED_COLS,
     SCALE_FREE_RATIO_COLS,
     derive_ratio_features,
 )
@@ -20,6 +22,9 @@ def _row(**overrides):
         "pre_total_instructions": "800",
         "pre_object_text_size_bytes": "4000",
         "pre_total_basic_blocks": "40",
+        "pre_autophase_TotalInsts": "800",
+        "pre_autophase_NumLoadInst": "80",
+        "pre_autophase_NumStoreInst": "40",
     }
     row.update(overrides)
     return row
@@ -32,7 +37,9 @@ def test_derive_ratio_features_matches_expected_math():
     assert out["pre_size_per_inst"] == 4000 / 800
     assert out["pre_blocks_per_func"] == 40 / 10
     assert out["pre_insts_per_block"] == 800 / 40
-    assert set(out.keys()) == set(SCALE_FREE_RATIO_COLS)
+    assert set(SCALE_FREE_RATIO_COLS).issubset(out)
+    assert set(SCALE_FREE_AUTOPHASE_COLS).issubset(out)
+    assert set(out.keys()) == set(SCALE_FREE_DERIVED_COLS)
 
 
 def test_derive_ratio_features_post_prefix():
@@ -55,6 +62,7 @@ def test_derive_ratio_features_missing_values():
     # missing denoms -> 0.0, no exception
     assert out["pre_ir_per_func"] == 0.0
     assert isinstance(out["pre_ir_per_func"], float)
+    assert isinstance(out["pre_autophase_NumLoadInst_per_total_inst"], float)
 
 
 def test_ratio_features_are_size_invariant():
@@ -72,13 +80,25 @@ def test_ratio_features_are_size_invariant():
         assert small[col] == big[col], col
 
 
+def test_autophase_features_are_size_invariant():
+    small = derive_ratio_features(_row())
+    big = derive_ratio_features(_row(
+        pre_autophase_TotalInsts="8000",
+        pre_autophase_NumLoadInst="800",
+        pre_autophase_NumStoreInst="400",
+    ))
+    assert small["pre_autophase_NumLoadInst_per_total_inst"] == big["pre_autophase_NumLoadInst_per_total_inst"]
+    assert small["pre_autophase_NumStoreInst_per_total_inst"] == big["pre_autophase_NumStoreInst_per_total_inst"]
+
+
 def test_feature_cols_override_names_align_with_derive_output():
     # The names a user passes to train_rl --feature-cols must match exactly
     # what derive_ratio_features emits so online inference can inject them.
-    assert SCALE_FREE_RATIO_COLS == [
+    assert SCALE_FREE_DERIVED_COLS[:5] == [
         "pre_ir_per_func",
         "pre_mem_frac",
         "pre_size_per_inst",
         "pre_blocks_per_func",
         "pre_insts_per_block",
     ]
+    assert "pre_autophase_NumLoadInst_per_total_inst" in SCALE_FREE_DERIVED_COLS
